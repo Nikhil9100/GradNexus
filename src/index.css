@@ -72,3 +72,104 @@
 .bg-gradient-radial {
   background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
 }
+
+/* Mobile App Specific Styles */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Mobile Scrollbar */
+.mobile-scroll::-webkit-scrollbar {
+  width: 2px;
+}
+
+.mobile-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 1px;
+}
+
+/* Mobile Touch Feedback */
+.touch-feedback:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+/* Mobile Card Shadows */
+.mobile-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Mobile Typography */
+@media (max-width: 640px) {
+  .mobile-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+  }
+  
+  .mobile-subtitle {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .mobile-body {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+/* Mobile Button Styles */
+.mobile-button {
+  min-height: 44px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.mobile-button:active {
+  transform: scale(0.98);
+}
+
+/* Mobile Input Styles */
+.mobile-input {
+  min-height: 44px;
+  border-radius: 12px;
+  font-size: 16px; /* Prevents zoom on iOS */
+}
+
+/* Mobile Navigation */
+.mobile-nav-item {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Mobile Status Bar */
+.status-bar-height {
+  height: env(safe-area-inset-top);
+}
+
+/* Mobile Gesture Indicators */
+.swipe-indicator {
+  position: relative;
+}
+
+.swipe-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
